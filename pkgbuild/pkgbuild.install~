@@ -92,9 +92,9 @@ entry {
 }
 
 element {
-    padding:          6px;  /* Padding menor para elemento */
-    spacing:          6px;
-    border-radius:    2px;  /* Raio menor */
+    padding:          8px;
+    spacing:          8px;
+    border-radius:    4px;
 }
 
 element normal.normal {
@@ -105,8 +105,7 @@ element normal.normal {
 element selected.normal {
     background-color: @selected-color;
     text-color:       $bg_color;
-    border-radius:    2px;  /* Raio menor para o elemento selecionado */
-    border:           0px;  /* Sem borda explícita */
+    border-radius:    6px;
 }
 
 element alternate.normal {
