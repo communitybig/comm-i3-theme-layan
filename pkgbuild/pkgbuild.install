@@ -313,6 +313,9 @@ post_install() {
     
     # Backup current GTK settings
     backup_gtk_settings "$user" "$user_home"
+    
+    # Backup Rofi configuration
+    backup_rofi_config "$user" "$user_home"
 
     # Directories
     GTK4_DIR="$user_home/.config/gtk-4.0"
@@ -401,8 +404,11 @@ post_install() {
     else
         echo "Nenhum backup de wallpaper encontrado. O wallpaper atual será mantido."
     fi
+    
+    # Apply theme to Rofi
+    apply_theme_to_rofi "$user" "$user_home"
 
-    echo "Tema Layan aplicado com sucesso para i3wm! O wallpaper original foi preservado."
+    echo "Tema Layan aplicado com sucesso para i3wm e Rofi! O wallpaper original foi preservado."
     return 0
 }
 
@@ -507,6 +513,9 @@ post_remove() {
             # Remove the backup file
             rm -f "$wallpaper_backup"
         fi
+        
+        # Restore Rofi configuration
+        restore_rofi_config "$user" "$user_home"
     else
         echo "Diretório de backup $backup_dir não encontrado. Pulando restauração."
     fi
