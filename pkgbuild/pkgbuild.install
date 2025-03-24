@@ -59,7 +59,7 @@ apply_theme_to_rofi() {
     background-color:   $bg_color;
     text-color:         $text_color;
     
-    accent-color:       $accent_color;
+    accent_color:       $accent_color;
     border-color:       $border_color;
 }
 
@@ -80,7 +80,7 @@ prompt, entry, element-icon, element-text {
 }
 
 prompt {
-    text-color: @accent-color;
+    text-color: @accent_color;
 }
 
 textbox {
@@ -102,19 +102,19 @@ element {
 }
 
 element normal normal {
-    text-color: @fg0;
+
 }
 
 element normal urgent {
-    text-color: @urgent-color;
+    text-color: @accent_color;
 }
 
 element normal active {
-    text-color: @accent-color;
+    text-color: @accent_color;
 }
 
 element alternate active {
-    text-color: @accent-color;
+    text-color: @accent_color;
 }
 
 element selected {
@@ -122,11 +122,11 @@ element selected {
 }
 
 element selected normal, element selected active {
-    background-color:   @accent-color;
+    background-color:   @accent_color;
 }
 
 element selected urgent {
-    background-color:   @urgent-color;
+    background-color:   @accent_color;
 }
 
 element-icon {
