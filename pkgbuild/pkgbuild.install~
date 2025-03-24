@@ -59,7 +59,7 @@ apply_theme_to_rofi() {
     background-color:   $bg_color;
     text-color:         $text_color;
     
-    accent-color:       $accent_color;
+    accent_color:       $accent_color;
     border-color:       $border_color;
 }
 
