@@ -24,5 +24,11 @@ package() {
     mkdir -p "${pkgdir}/usr/share/themes"
 
     # Extract theme
-    tar -I zstd -xf "Layan-Dark.tar.xz" -C "${pkgdir}/usr/share/themes"
+    tar -xf "Layan-Dark.tar.xz" -C "${pkgdir}/usr/share/themes"
+    
+    # Renomear o diretório para corresponder ao nome usado no script de instalação
+    if [ -d "${pkgdir}/usr/share/themes/Layan-Dark" ]; then
+        mv "${pkgdir}/usr/share/themes/Layan-Dark" "${pkgdir}/usr/share/themes/Layan"
+        echo "Diretório de tema renomeado de Layan-Dark para Layan"
+    fi
 }
